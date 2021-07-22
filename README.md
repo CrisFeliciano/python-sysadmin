@@ -26,7 +26,7 @@ Plugins
 - > 2000
   - docker, gitlab, github, etc
 
-Pipelines
+
 - fluxos em estágios
 - segmentação lógica
 - identificação de bottlenecks
@@ -222,3 +222,10 @@ if __name__ == "__main__":  # também com 2 underlines
 
 Veículos SW: https://swapi.dev/api/vehicles
 Tudão: https://swapi.dev/api/
+
+SERVER Jenkins:
+http://localhost:8080/
+
+SERVER Lista Postman:
+http://localhost:5000/
+
