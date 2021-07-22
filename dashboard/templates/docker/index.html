@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Docker</h1>
+
+<table>
+    <!-- tr>th*3 -->
+    <tr> <!-- tr: table row (linha de tabela) -->
+        <th>Nome</th> <!-- th: table header (cabeçalho de tabela) -->
+        <th>ID</th>
+        <th>Status</th>
+        <th>Ações</th>
+    </tr>
+    {% for container in containers %}
+    <!-- tr>td*3 -->
+    <tr>
+        <td>{{ container.name }}</td>
+        <td>{{ container.short_id }}</td>
+        <td>{{ container.status }}</td>
+        <td>
+            {% if container.status == "running" %}
+                    <!-- {{ url_for('docker.stop_container', id=container.id) }} -->
+                <a href="{{ url_for('docker.stop_container', id=container.id) }}">Parar</a>
+            {% else %}
+                <a href="{{ url_for('docker.start_container', id=container.id) }}">Executar</a>
+                <a href="{{ url_for('docker.remove_container', id=container.id) }}">Remover</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

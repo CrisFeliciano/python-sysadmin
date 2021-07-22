@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ verbo}} personagem {% if personagem %} {{ personagem._id }}{% endif %}</h1>
+
+<form method="post">
+    <p>
+        Nome: 
+        <input type="text"
+                     name="personagem_nome"
+                     value="{% if personagem %}{{ personagem.nome }}{% endif %}">
+    </p>
+    <p>
+        <input type="submit" value="Salvar">
+    </p>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+Flask
+
+- microframework
+  - werkzeug
+- micro?
+  - plugins
+    - sqlalchemy / peewee
+    - admin
+    - migrações
+    - email
+- motor / engine de templates
+- Olá mundo

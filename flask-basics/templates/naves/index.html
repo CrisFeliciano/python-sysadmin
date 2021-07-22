@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Naves</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>ID</th>
+        <th>Ações</th>
+    </tr>
+    {% for nave in naves %}
+    <tr>
+        <td>{{ nave.nome }}</td>
+        <td>{{ nave._id }}</td>
+        <td>       <!-- url_for('naves.editar_nave', id=nave._id) -->
+            <a href="{{ url_for('naves.editar_nave', id=nave._id) }}">Editar</a>
+            <a href="{{ url_for('naves.deletar_nave', id=nave._id) }}">Deletar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            <a href="{{ url_for('naves.criar_nave') }}">+
+            </a>
+        </td>
+    </tr>
+</table>
+{% endblock %}

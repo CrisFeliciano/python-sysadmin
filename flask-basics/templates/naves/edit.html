@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ verbo }} nave {% if nave %}{{ nave._id }}{% endif %}</h1>
+
+<form method="post">
+    <p>
+        Nome:
+        <input type="text"
+               name="nave_nome"
+               value="{% if nave %}{{ nave.nome }}{% endif %}">
+    </p>
+    <p>
+        <input type="submit" value="Salvar">
+    </p>
+</form>
+{% endblock %}
