@@ -3,6 +3,12 @@
 {% block content %}
 <h1>Docker</h1>
 
+{% for (cat, msg) in get_flashed_messages(with_categories=True) %}
+    <div class="flash {{ cat }}">
+        {{ msg }}
+    </div>
+{% endfor %}
+
 <table>
     <!-- tr>th*3 -->
     <tr> <!-- tr: table row (linha de tabela) -->
